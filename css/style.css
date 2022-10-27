@@ -50,6 +50,11 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+@media screen and (min-width: 1024px) {
+  .header__cta {
+    padding: 0.75em 2.5em;
+  }
+}
 
 .nav {
   display: none;
@@ -84,12 +89,15 @@ body {
 }
 
 .section {
-  padding: 2em 0;
+  padding: 2em;
 }
 .section--intro {
   padding: 0;
   height: 100vh;
   margin: 4em 0;
+}
+.section--intro .section__flexContent {
+  padding: 0 2em;
 }
 .section--whyEasybank {
   text-align: center;
@@ -113,14 +121,12 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding: 0 2em;
 }
 .section__gridContent {
   display: grid;
   align-items: center;
   justify-items: center;
   gap: 1.25em;
-  padding: 0 2em;
 }
 .section__card {
   display: block;
@@ -149,7 +155,7 @@ body {
 }
 .section__h2 {
   margin: 1em 0;
-  font: 700 28px "Public Sans", sans-serif;
+  font: 300 28px "Public Sans", sans-serif;
   color: #2d314d;
   text-align: center;
 }
@@ -186,6 +192,11 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+@media screen and (min-width: 1024px) {
+  .section__cta {
+    padding: 0.75em 2.5em;
+  }
+}
 
 .footer {
   display: grid;
@@ -202,6 +213,9 @@ body {
 }
 .footer__socmedlink {
   margin: 0 0.5em;
+}
+.footer__socmedlink img {
+  margin: 1em 0;
 }
 .footer__listGroup {
   list-style-type: none;
@@ -229,6 +243,11 @@ body {
   display: inline-block;
   margin: 1em 0;
 }
+@media screen and (min-width: 1024px) {
+  .footer__cta {
+    padding: 0.75em 2.5em;
+  }
+}
 .footer__text {
   margin: 1em 0;
   font: 400 16px "Public Sans", sans-serif;
@@ -236,10 +255,14 @@ body {
 }
 
 @media screen and (min-width: 565px) {
-  .section--intro > .section__flexContent {
-    height: 40%;
+  .section {
+    padding: 2em 10vw;
   }
-  .section__flexContent {
+  .section--intro {
+    padding: 0;
+  }
+  .section--intro .section__flexContent {
+    height: 40%;
     padding: 0 10vw;
   }
   .section__gridContent {
@@ -247,11 +270,142 @@ body {
     grid-template-rows: repeat(2, 1fr);
     align-items: start;
     gap: 2em;
-    padding: 0 10vw;
     text-align: left;
   }
   .section__cardContent {
     padding: 2em;
+  }
+
+  .footer {
+    padding: 2em 10vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    justify-content: space-between;
+    padding: 1.5em 10vw;
+  }
+  .header__burgerBtn {
+    display: none;
+  }
+  .header__cta {
+    display: inline-block;
+  }
+
+  .nav {
+    display: block;
+  }
+  .nav__listGroup {
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav__listItem {
+    margin: 0 1em;
+  }
+  .nav__link {
+    font-size: 14px;
+    color: #9698a6;
+  }
+
+  .section--intro {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .section--intro .section__flexContent {
+    height: initial;
+    margin: 0;
+  }
+  .section__cta {
+    margin: 2em 0;
+  }
+  .section__bgContainer {
+    position: absolute;
+    left: 40%;
+    height: 100vh;
+    width: 60%;
+    background: url("../assets/bg-intro-desktop.svg") 10% 40% no-repeat;
+    background-size: 155%;
+  }
+  .section__img {
+    top: initial;
+    bottom: -10%;
+    height: 100vh;
+  }
+  .section__flexContent {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50%;
+    text-align: left;
+  }
+  .section__gridContent {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    align-items: start;
+    gap: 2em;
+    margin: 2em 0;
+    text-align: left;
+  }
+  .section__item {
+    margin: 0;
+  }
+  .section__cardContent {
+    padding: 2em;
+  }
+  .section__h1 {
+    font-size: 48px;
+  }
+  .section__h2 {
+    margin: 1em 0 0.5em 0;
+    font-size: 36px;
+    text-align: left;
+  }
+  .section__text {
+    font-size: 18px;
+  }
+  .section__text--cardInfo {
+    font-size: 16px;
+  }
+  .section__text--author {
+    font-size: 11px;
+  }
+  .section__text--cardTitle {
+    font-size: 24px;
+    line-height: 1.25em;
+  }
+
+  .footer {
+    grid-template-columns: 1.5fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1em;
+    grid-template-areas: "logo links1 links2 grp" "socmed links1 links2 grp";
+    align-items: center;
+    text-align: left;
+  }
+  .footer__logo {
+    grid-area: logo;
+    align-self: end;
+    justify-self: left;
+  }
+  .footer__socmedContainer {
+    grid-area: socmed;
+    align-self: start;
+    justify-self: left;
+    margin: 0;
+  }
+  .footer__listGroup:first-of-type {
+    grid-area: links1;
+  }
+  .footer__listGroup:last-of-type {
+    grid-area: links2;
+  }
+  .footer__listItem {
+    margin: 1em 0;
+  }
+  .footer__grp {
+    grid-area: grp;
+    justify-self: end;
+    text-align: right;
   }
 }
 
