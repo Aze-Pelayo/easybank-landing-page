@@ -362,12 +362,14 @@ body {
             width: 60%;
             background: url("../assets/bg-intro-desktop.svg") 10% 40% no-repeat;
             background-size: 155%;
+            z-index: 4;
+            overflow: visible;
         }
 
         &__img {
             top: initial;
             bottom: -10%;
-            height: 100vh;
+            height: 110vh;
         }
 
         &__flexContent {
@@ -402,6 +404,14 @@ body {
             margin: 1em 0 0.5em 0;
             font-size: 36px;
             text-align: left;
+        }
+
+        &__h3 {
+            font-size: 22px;
+        }
+
+        &__icon {
+            margin: 1em 0 2em 0;
         }
 
         &__text {

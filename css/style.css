@@ -326,11 +326,13 @@ body {
     width: 60%;
     background: url("../assets/bg-intro-desktop.svg") 10% 40% no-repeat;
     background-size: 155%;
+    z-index: 4;
+    overflow: visible;
   }
   .section__img {
     top: initial;
     bottom: -10%;
-    height: 100vh;
+    height: 110vh;
   }
   .section__flexContent {
     align-items: flex-start;
@@ -359,6 +361,12 @@ body {
     margin: 1em 0 0.5em 0;
     font-size: 36px;
     text-align: left;
+  }
+  .section__h3 {
+    font-size: 22px;
+  }
+  .section__icon {
+    margin: 1em 0 2em 0;
   }
   .section__text {
     font-size: 18px;
