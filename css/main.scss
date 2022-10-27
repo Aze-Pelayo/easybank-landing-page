@@ -1,4 +1,4 @@
-@import '_base.scss';
+@import "_base.scss";
 
 * {
 	/* Ensure that all elements are sized in an intuitive way */
@@ -9,3 +9,279 @@
 	padding: 0;
 }
 
+body {
+	background: $l-gray;
+}
+
+@mixin cta {
+	margin: 1em;
+	padding: 1em 1.5em;
+	border-radius: 25px;
+	background: rgb(49, 211, 92);
+	background: linear-gradient(90deg, rgba(49, 211, 92, 1) 0%, rgba(43, 183, 218, 1) 100%);
+	font: 400 14px $public-sans;
+	color: $white;
+	text-decoration: none;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 4em;
+	width: 100%;
+	z-index: 5;
+	padding: 1em 2em;
+	background: $white;
+
+	&__logo img {
+		height: 100%;
+	}
+
+	&__burgerBtn {
+		height: 3em;
+		width: 2.5em;
+		border: none;
+		outline: none;
+		background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
+
+		&.active {
+			height: 2em;
+			width: 1.5em;
+			background-image: urL("../assets/icon-close.svg");
+		}
+	}
+
+	&__cta {
+		display: none;
+		@include cta;
+	}
+}
+
+.nav {
+	display: none;
+
+	&.active {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		position: absolute;
+		top: 5em;
+		left: 0;
+		right: 0;
+		width: 90vw;
+		margin: 0 auto;
+		padding: 1.5em;
+		border-radius: 5px;
+		background: $white;
+		filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+	}
+
+	&__listGroup {
+		list-style-type: none;
+	}
+
+	&__listItem {
+		margin: 1.5em 0;
+		text-align: center;
+	}
+
+	&__link {
+		font: 400 18px $public-sans;
+		color: $d-blue;
+		text-decoration: none;
+	}
+}
+
+.section {
+    padding: 2em 0;
+
+	&--intro {
+        padding: 0;
+		height: 100vh;
+		margin: 4em 0;
+	}
+
+	&--whyEasybank {
+		text-align: center;
+		background: $l-grayish-blue;
+	}
+
+	&__bgContainer {
+		height: 50vh;
+		width: 100%;
+		background: url("../assets/bg-intro-mobile.svg") no-repeat center center/cover;
+		background-size: 100%;
+		text-align: center;
+		z-index: -2;
+		overflow: hidden;
+	}
+
+	&__grp {
+		padding: 1em 0;
+	}
+
+	&__flexContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		padding: 0 2em;
+	}
+
+	&__gridContent {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		gap: 1.25em;
+		padding: 0 2em;
+	}
+
+	&__card {
+		display: block;
+		height: initial;
+		border-radius: 10px;
+		background: $white;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	&__imgCard {
+		height: 50%;
+		width: 100%;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	&__cardContent {
+		padding: 2em;
+	}
+
+	&__item {
+		margin: 1em 0;
+	}
+
+	&__h1 {
+		margin: 0.5em 0;
+		font: 300 36px $public-sans;
+		color: $d-blue;
+	}
+
+	&__h2 {
+		margin: 1em 0;
+		font: 700 28px $public-sans;
+		color: $d-blue;
+		text-align: center;
+	}
+
+	&__h3 {
+		margin: 1em 0;
+		font: 700 20px $public-sans;
+		color: $d-blue;
+	}
+
+	&__img {
+		position: relative;
+		top: -20%;
+		height: 115%;
+	}
+
+	&__text {
+		margin: 0.5em 0;
+		font: 400 14px $public-sans;
+		color: $grayish-blue;
+		line-height: 1.5em;
+
+		&--author {
+			font-size: 12px;
+		}
+
+		&--cardTitle {
+			font-size: 18px;
+			color: $d-blue;
+		}
+	}
+
+	&__cta {
+		@include cta;
+	}
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: auto;
+	justify-items: center;
+	align-items: center;
+    margin-top: 2em;
+	padding: 2em;
+	background: $d-blue;
+	text-align: center;
+
+	&__socmedContainer {
+		margin: 1.5em 0;
+	}
+
+	&__socmedlink {
+		margin: 0 0.5em;
+	}
+
+	&__listGroup {
+		list-style-type: none;
+	}
+
+	&__listItem {
+		margin: 0.5em 0;
+	}
+
+	&__listLink {
+		font: 400 16px $public-sans;
+		color: $l-gray;
+		text-decoration: none;
+	}
+
+	&__grp {
+		margin: 1em 0;
+	}
+
+	&__cta {
+		@include cta;
+		display: inline-block;
+		margin: 1em 0;
+	}
+
+	&__text {
+		margin: 1em 0;
+		font: 400 16px $public-sans;
+		color: $grayish-blue;
+	}
+}
+
+@media screen and (min-width: 565px) {
+	.section {
+        &--intro > .section__flexContent {
+            height: 40%;
+        }
+
+        &__flexContent {
+            padding: 0 10vw;
+        }
+
+		&__gridContent {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+            align-items: start;
+			gap: 2em;
+			padding: 0 10vw;
+			text-align: left;
+		}
+
+        &__cardContent {
+            padding: 2em;
+        }
+	}
+}
