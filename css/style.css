@@ -92,7 +92,6 @@ body {
   padding: 1.5em;
   border-radius: 5px;
   background: #ffffff;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
 }
 .nav__listGroup {
   list-style-type: none;

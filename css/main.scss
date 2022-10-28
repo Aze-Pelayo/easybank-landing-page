@@ -23,9 +23,9 @@ body {
 	color: $white;
 	text-decoration: none;
 
-    @media screen and (min-width:1024px) {
-        padding: 0.75em 2.5em;
-    }
+	@media screen and (min-width: 1024px) {
+		padding: 0.75em 2.5em;
+	}
 
 	&:hover,
 	&:active {
@@ -34,6 +34,7 @@ body {
 	}
 }
 
+// MOBILE
 .header {
 	display: flex;
 	align-items: center;
@@ -73,14 +74,14 @@ body {
 
 .navbg {
 	display: none;
-	position:absolute;
+	position: absolute;
 	top: 4em;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	z-index: -10;
-	background: rgb(45,49,77);
-	background: linear-gradient(180deg, rgba(45,49,77,1) 0%, rgba(43,183,218,0) 100%);
+	background: rgb(45, 49, 77);
+	background: linear-gradient(180deg, rgba(45, 49, 77, 1) 0%, rgba(43, 183, 218, 0) 100%);
 
 	&.active {
 		display: inline;
@@ -104,7 +105,6 @@ body {
 		padding: 1.5em;
 		border-radius: 5px;
 		background: $white;
-		filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
 	}
 
 	&__listGroup {
@@ -129,17 +129,16 @@ body {
 }
 
 .section {
-    padding: 2em;
+	padding: 2em;
 
 	&--intro {
-        padding: 0;
+		padding: 0;
 		height: 100vh;
 		margin: 4em 0;
 
-        .section__flexContent {
-            padding: 0 2em;
-        }
-        
+		.section__flexContent {
+			padding: 0 2em;
+		}
 	}
 
 	&--whyEasybank {
@@ -167,7 +166,6 @@ body {
 		justify-content: center;
 		flex-direction: column;
 		text-align: center;
-		// padding: 0 2em;
 	}
 
 	&__gridContent {
@@ -175,7 +173,6 @@ body {
 		align-items: center;
 		justify-items: center;
 		gap: 1.25em;
-		// padding: 0 2em;
 	}
 
 	&__card {
@@ -258,7 +255,7 @@ body {
 	grid-template-columns: auto;
 	justify-items: center;
 	align-items: center;
-    margin-top: 2em;
+	margin-top: 2em;
 	padding: 2em;
 	background: $d-blue;
 	text-align: center;
@@ -270,15 +267,14 @@ body {
 	&__socmedlink {
 		margin: 0 0.5em;
 
-        svg {
-            margin: 1em 0;
+		svg {
+			margin: 1em 0;
 
 			& path:hover,
 			& path:focus {
 				fill: $lime-green;
 			}
-	
-        }
+		}
 	}
 
 	&__listGroup {
@@ -317,66 +313,67 @@ body {
 	}
 }
 
+// LARGER MOBILE SCREENS
 @media screen and (min-width: 565px) {
 	.section {
-        padding: 2em 10vw;
+		padding: 2em 10vw;
 
-        &--intro {
-            padding: 0;
+		&--intro {
+			padding: 0;
 
-            .section__flexContent {
-                height: 40%;
-                padding: 0 10vw;
-            }
-        }
+			.section__flexContent {
+				height: 40%;
+				padding: 0 10vw;
+			}
+		}
 
 		&__gridContent {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
-            align-items: start;
+			align-items: start;
 			gap: 2em;
 			text-align: left;
 		}
 
-        &__cardContent {
-            padding: 2em;
-        }
+		&__cardContent {
+			padding: 2em;
+		}
 	}
 
-    .footer {
-        padding: 2em 10vw;
-    }
+	.footer {
+		padding: 2em 10vw;
+	}
 }
 
+// DESKTOP
 @media screen and (min-width: 1024px) {
-    .header {
-        justify-content: space-between;
-        padding: 1.5em 10vw;
+	.header {
+		justify-content: space-between;
+		padding: 1.5em 10vw;
 
-        &__burgerBtn {
-            display: none;
-        }
+		&__burgerBtn {
+			display: none;
+		}
 
-        &__cta {
-            display: inline-block;
-        }
-    }
+		&__cta {
+			display: inline-block;
+		}
+	}
 
-    .nav {
-        display: block;
-        
-        &__listGroup {
-            display: grid;
-            grid-template-columns: repeat(5, 5em);
+	.nav {
+		display: block;
+
+		&__listGroup {
+			display: grid;
+			grid-template-columns: repeat(5, 5em);
 			align-items: center;
 			justify-items: center;
 			gap: 1em;
-	
-        }
+		}
 
-        &__listItem {
+		&__listItem {
 			position: relative;
-            padding: 0 1em;
+			padding: 0 1em;
 
 			&:hover::before {
 				position: absolute;
@@ -390,150 +387,146 @@ body {
 				border-image-slice: 1;
 				border-image-source: linear-gradient(to left, $lime-green, $bright-cyan);
 			}
-        }
+		}
 
-        &__link {
+		&__link {
 			font: 700 14px $public-sans;
-            color: $grayish-blue;
-        }
-        
-    }
+			color: $grayish-blue;
+		}
+	}
 
-    .section {
+	.section {
+		&--intro {
+			display: flex;
+			align-items: center;
+			margin: 0;
 
-        &--intro {
-            display: flex;
-            align-items: center;
-            margin: 0;
+			.section__flexContent {
+				height: initial;
+				margin: 0;
+			}
+		}
 
-            .section__flexContent {
-                height: initial;
-                margin: 0;
-            }
-        }
+		&__cta {
+			margin: 2em 0;
+		}
 
-        &__cta {
-            margin: 2em 0;
-        }
+		&__bgContainer {
+			position: absolute;
+			left: 40%;
+			height: 100vh;
+			width: 60%;
+			background: url("../assets/bg-intro-desktop.svg") 10% 40% no-repeat;
+			background-size: 155%;
+			z-index: 4;
+			overflow: visible;
+		}
 
-        &__bgContainer {
-            position: absolute;
-            left: 40%;
-            height: 100vh;
-            width: 60%;
-            background: url("../assets/bg-intro-desktop.svg") 10% 40% no-repeat;
-            background-size: 155%;
-            z-index: 4;
-            overflow: visible;
-        }
+		&__img {
+			top: initial;
+			bottom: -10%;
+			height: 110vh;
+		}
 
-        &__img {
-            top: initial;
-            bottom: -10%;
-            height: 110vh;
-        }
-
-        &__flexContent {
-            align-items: flex-start;
-            justify-content: flex-start;
-            width: 50%;
-            text-align: left;
-        }
+		&__flexContent {
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 50%;
+			text-align: left;
+		}
 
 		&__gridContent {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: 1fr;
-            align-items: start;
+			align-items: start;
 			gap: 2em;
 			margin: 2em 0;
 			text-align: left;
 		}
 
-        &__item {
-            margin: 0;
-        }
+		&__item {
+			margin: 0;
+		}
 
-        &__cardContent {
-            padding: 2em;
-        }
+		&__cardContent {
+			padding: 2em;
+		}
 
-        &__h1 {
-            font-size: 48px;
-        }
+		&__h1 {
+			font-size: 48px;
+		}
 
-        &__h2 {
-            margin: 1em 0 0.5em 0;
-            font-size: 36px;
-            text-align: left;
-        }
+		&__h2 {
+			margin: 1em 0 0.5em 0;
+			font-size: 36px;
+			text-align: left;
+		}
 
-        &__h3 {
-            font-size: 22px;
-        }
+		&__h3 {
+			font-size: 22px;
+		}
 
-        &__icon {
-            margin: 1em 0 2em 0;
-        }
+		&__icon {
+			margin: 1em 0 2em 0;
+		}
 
-        &__text {
-            font-size: 18px;
+		&__text {
+			font-size: 18px;
 
-            &--cardInfo {
-                font-size: 16px;
-            }
+			&--cardInfo {
+				font-size: 16px;
+			}
 
-            &--author {
-                font-size: 11px;
-            }
+			&--author {
+				font-size: 11px;
+			}
 
-            &--cardTitle {
-                font-size: 24px;
-                line-height: 1.25em;
-            }
-        }
+			&--cardTitle {
+				font-size: 24px;
+				line-height: 1.25em;
+			}
+		}
 	}
 
+	.footer {
+		grid-template-columns: 1.5fr 1fr 1fr 2fr;
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1em;
+		grid-template-areas:
+			"logo links1 links2 grp"
+			"socmed links1 links2 grp";
+		align-items: center;
+		text-align: left;
 
-    .footer {
-        grid-template-columns: 1.5fr 1fr 1fr 2fr; 
-        grid-template-rows: repeat(2, 1fr); 
-        gap: 1em; 
-        grid-template-areas: 
-            "logo links1 links2 grp"
-            "socmed links1 links2 grp"; 
-        align-items: center;
-        text-align: left;
+		&__logo {
+			grid-area: logo;
+			align-self: end;
+			justify-self: left;
+		}
 
-        &__logo {
-            grid-area: logo;
-            align-self:end;
-            justify-self: left;
-        }
+		&__socmedContainer {
+			grid-area: socmed;
+			align-self: start;
+			justify-self: left;
+			margin: 0;
+		}
 
-        &__socmedContainer {
-            grid-area: socmed;
-            align-self: start;
-            justify-self: left;
-            margin: 0;
-        }
+		&__listGroup:first-of-type {
+			grid-area: links1;
+		}
 
-        &__listGroup:first-of-type {
-            grid-area: links1;
-        }
+		&__listGroup:last-of-type {
+			grid-area: links2;
+		}
 
-        &__listGroup:last-of-type {
-            grid-area: links2;
-        }
+		&__listItem {
+			margin: 1em 0;
+		}
 
-        &__listItem {
-            margin: 1em 0;
-        }
-
-        &__grp {
-            grid-area: grp;
-            justify-self: end;
-            text-align:right;
-
-        }
-    }
+		&__grp {
+			grid-area: grp;
+			justify-self: end;
+			text-align: right;
+		}
+	}
 }
