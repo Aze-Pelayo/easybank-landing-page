@@ -22,11 +22,16 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 
 ### Screenshot
+Mobile View
+![Mobile View](./screenshots/screenshot-mobile.png)
+
+Desktop View
+![Desktop View](./screenshots/screenshot-desktop.png)
 
 ### Links
 
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://github.com/Aze-Pelayo/easybank-landing-page
+- Live Site URL: https://aze-pelayo.github.io/easybank-landing-page/
 
 ## My process
 
@@ -37,5 +42,3 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
-### What I learned

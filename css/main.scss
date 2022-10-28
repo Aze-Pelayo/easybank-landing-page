@@ -1,4 +1,4 @@
-@import '_base.scss';
+@import "_base.scss";
 
 * {
 	/* Ensure that all elements are sized in an intuitive way */
@@ -9,3 +9,524 @@
 	padding: 0;
 }
 
+body {
+	background: $l-gray;
+}
+
+@mixin cta {
+	margin: 1em;
+	padding: 1em 1.5em;
+	border-radius: 25px;
+	background: rgb(49, 211, 92);
+	background: linear-gradient(90deg, rgba(49, 211, 92, 1) 0%, rgba(43, 183, 218, 1) 100%);
+	font: 400 14px $public-sans;
+	color: $white;
+	text-decoration: none;
+
+	@media screen and (min-width: 1024px) {
+		padding: 0.75em 2.5em;
+	}
+
+	&:hover,
+	&:active {
+		transition: all 0.2s ease;
+		filter: brightness(110%);
+	}
+}
+
+// MOBILE
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 4em;
+	width: 100%;
+	z-index: 5;
+	padding: 1em 2em;
+	background: $white;
+
+	&__logo img {
+		height: 100%;
+	}
+
+	&__burgerBtn {
+		height: 3em;
+		width: 2.5em;
+		border: none;
+		outline: none;
+		background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
+
+		&.active {
+			height: 2em;
+			width: 1.5em;
+			background-image: urL("../assets/icon-close.svg");
+		}
+	}
+
+	&__cta {
+		display: none;
+		@include cta;
+	}
+}
+
+.navbg {
+	display: none;
+	position: absolute;
+	top: 4em;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -10;
+	background: rgb(45, 49, 77);
+	background: linear-gradient(180deg, rgba(45, 49, 77, 1) 0%, rgba(43, 183, 218, 0) 100%);
+
+	&.active {
+		display: inline;
+	}
+}
+
+.nav {
+	display: none;
+
+	&.active {
+		display: flex;
+		position: fixed;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		top: 5em;
+		left: 0;
+		right: 0;
+		width: 90vw;
+		margin: 0 auto;
+		padding: 1.5em;
+		border-radius: 5px;
+		background: $white;
+	}
+
+	&__listGroup {
+		list-style-type: none;
+	}
+
+	&__listItem {
+		margin: 1.5em 0;
+		text-align: center;
+	}
+
+	&__link {
+		font: 400 18px $public-sans;
+		color: $d-blue;
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			color: $d-blue;
+		}
+	}
+}
+
+.section {
+	padding: 2em;
+
+	&--intro {
+		padding: 0;
+		height: 100vh;
+		margin: 4em 0;
+
+		.section__flexContent {
+			padding: 0 2em;
+		}
+	}
+
+	&--whyEasybank {
+		text-align: center;
+		background: $l-grayish-blue;
+	}
+
+	&__bgContainer {
+		height: 50vh;
+		width: 100%;
+		background: url("../assets/bg-intro-mobile.svg") no-repeat center center/cover;
+		background-size: 100%;
+		text-align: center;
+		z-index: -2;
+		overflow: hidden;
+	}
+
+	&__grp {
+		padding: 1em 0;
+	}
+
+	&__flexContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	&__gridContent {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		gap: 1.25em;
+	}
+
+	&__card {
+		display: block;
+		height: initial;
+		border-radius: 10px;
+		background: $white;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover .section__text--cardTitle,
+		&:active .section__text--cardTitle {
+			color: $lime-green;
+		}
+	}
+
+	&__imgCard {
+		height: 50%;
+		width: 100%;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	&__cardContent {
+		padding: 2em;
+	}
+
+	&__item {
+		margin: 1em 0;
+	}
+
+	&__h1 {
+		margin: 0.5em 0;
+		font: 300 36px $public-sans;
+		color: $d-blue;
+	}
+
+	&__h2 {
+		margin: 1em 0;
+		font: 300 28px $public-sans;
+		color: $d-blue;
+		text-align: center;
+	}
+
+	&__h3 {
+		margin: 1em 0;
+		font: 700 20px $public-sans;
+		color: $d-blue;
+	}
+
+	&__img {
+		position: relative;
+		top: -20%;
+		height: 115%;
+	}
+
+	&__text {
+		margin: 0.5em 0;
+		font: 400 14px $public-sans;
+		color: $grayish-blue;
+		line-height: 1.5em;
+
+		&--author {
+			font-size: 12px;
+		}
+
+		&--cardTitle {
+			font-size: 18px;
+			color: $d-blue;
+		}
+	}
+
+	&__cta {
+		@include cta;
+	}
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: auto;
+	justify-items: center;
+	align-items: center;
+	margin-top: 2em;
+	padding: 2em;
+	background: $d-blue;
+	text-align: center;
+
+	&__socmedContainer {
+		margin: 1.5em 0;
+	}
+
+	&__socmedlink {
+		margin: 0 0.5em;
+
+		svg {
+			margin: 1em 0;
+
+			& path:hover,
+			& path:focus {
+				fill: $lime-green;
+			}
+		}
+	}
+
+	&__listGroup {
+		list-style-type: none;
+	}
+
+	&__listItem {
+		margin: 0.5em 0;
+	}
+
+	&__listLink {
+		font: 400 16px $public-sans;
+		color: $l-gray;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $lime-green;
+		}
+	}
+
+	&__grp {
+		margin: 1em 0;
+	}
+
+	&__cta {
+		@include cta;
+		display: inline-block;
+		margin: 1em 0;
+	}
+
+	&__text {
+		margin: 1em 0;
+		font: 400 16px $public-sans;
+		color: $grayish-blue;
+	}
+}
+
+// LARGER MOBILE SCREENS
+@media screen and (min-width: 565px) {
+	.section {
+		padding: 2em 10vw;
+
+		&--intro {
+			padding: 0;
+
+			.section__flexContent {
+				height: 40%;
+				padding: 0 10vw;
+			}
+		}
+
+		&__gridContent {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			align-items: start;
+			gap: 2em;
+			text-align: left;
+		}
+
+		&__cardContent {
+			padding: 2em;
+		}
+	}
+
+	.footer {
+		padding: 2em 10vw;
+	}
+}
+
+// DESKTOP
+@media screen and (min-width: 1024px) {
+	.header {
+		justify-content: space-between;
+		padding: 1.5em 10vw;
+
+		&__burgerBtn {
+			display: none;
+		}
+
+		&__cta {
+			display: inline-block;
+		}
+	}
+
+	.nav {
+		display: block;
+
+		&__listGroup {
+			display: grid;
+			grid-template-columns: repeat(5, 5em);
+			align-items: center;
+			justify-items: center;
+			gap: 1em;
+		}
+
+		&__listItem {
+			position: relative;
+			padding: 0 1em;
+
+			&:hover::before {
+				position: absolute;
+				width: 100%;
+				content: "";
+				z-index: -1;
+				top: 200%;
+				left: 0;
+				border-width: 3px;
+				border-style: solid;
+				border-image-slice: 1;
+				border-image-source: linear-gradient(to left, $lime-green, $bright-cyan);
+			}
+		}
+
+		&__link {
+			font: 700 14px $public-sans;
+			color: $grayish-blue;
+		}
+	}
+
+	.section {
+		&--intro {
+			display: flex;
+			align-items: center;
+			margin: 0;
+
+			.section__flexContent {
+				height: initial;
+				margin: 0;
+			}
+		}
+
+		&__cta {
+			margin: 2em 0;
+		}
+
+		&__bgContainer {
+			position: absolute;
+			left: 40%;
+			height: 100vh;
+			width: 60%;
+			background: url("../assets/bg-intro-desktop.svg") 10% 40% no-repeat;
+			background-size: 155%;
+			z-index: 4;
+			overflow: visible;
+		}
+
+		&__img {
+			top: initial;
+			bottom: -10%;
+			height: 110vh;
+		}
+
+		&__flexContent {
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 50%;
+			text-align: left;
+		}
+
+		&__gridContent {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 1fr;
+			align-items: start;
+			gap: 2em;
+			margin: 2em 0;
+			text-align: left;
+		}
+
+		&__item {
+			margin: 0;
+		}
+
+		&__cardContent {
+			padding: 2em;
+		}
+
+		&__h1 {
+			font-size: 48px;
+		}
+
+		&__h2 {
+			margin: 1em 0 0.5em 0;
+			font-size: 36px;
+			text-align: left;
+		}
+
+		&__h3 {
+			font-size: 22px;
+		}
+
+		&__icon {
+			margin: 1em 0 2em 0;
+		}
+
+		&__text {
+			font-size: 18px;
+
+			&--cardInfo {
+				font-size: 16px;
+			}
+
+			&--author {
+				font-size: 11px;
+			}
+
+			&--cardTitle {
+				font-size: 24px;
+				line-height: 1.25em;
+			}
+		}
+	}
+
+	.footer {
+		grid-template-columns: 1.5fr 1fr 1fr 2fr;
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1em;
+		grid-template-areas:
+			"logo links1 links2 grp"
+			"socmed links1 links2 grp";
+		align-items: center;
+		text-align: left;
+
+		&__logo {
+			grid-area: logo;
+			align-self: end;
+			justify-self: left;
+		}
+
+		&__socmedContainer {
+			grid-area: socmed;
+			align-self: start;
+			justify-self: left;
+			margin: 0;
+		}
+
+		&__listGroup:first-of-type {
+			grid-area: links1;
+		}
+
+		&__listGroup:last-of-type {
+			grid-area: links2;
+		}
+
+		&__listItem {
+			margin: 1em 0;
+		}
+
+		&__grp {
+			grid-area: grp;
+			justify-self: end;
+			text-align: right;
+		}
+	}
+}
