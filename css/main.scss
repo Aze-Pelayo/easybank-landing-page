@@ -26,6 +26,12 @@ body {
     @media screen and (min-width:1024px) {
         padding: 0.75em 2.5em;
     }
+
+	&:hover,
+	&:active {
+		transition: all 0.2s ease;
+		filter: brightness(110%);
+	}
 }
 
 .header {
@@ -65,15 +71,31 @@ body {
 	}
 }
 
+.navbg {
+	display: none;
+	position:absolute;
+	top: 4em;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -10;
+	background: rgb(45,49,77);
+	background: linear-gradient(180deg, rgba(45,49,77,1) 0%, rgba(43,183,218,0) 100%);
+
+	&.active {
+		display: inline;
+	}
+}
+
 .nav {
 	display: none;
 
 	&.active {
 		display: flex;
+		position: fixed;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		position: absolute;
 		top: 5em;
 		left: 0;
 		right: 0;
@@ -98,6 +120,11 @@ body {
 		font: 400 18px $public-sans;
 		color: $d-blue;
 		text-decoration: none;
+
+		&:hover,
+		&:active {
+			color: $d-blue;
+		}
 	}
 }
 
@@ -158,6 +185,11 @@ body {
 		background: $white;
 		text-decoration: none;
 		cursor: pointer;
+
+		&:hover .section__text--cardTitle,
+		&:active .section__text--cardTitle {
+			color: $lime-green;
+		}
 	}
 
 	&__imgCard {
@@ -238,8 +270,14 @@ body {
 	&__socmedlink {
 		margin: 0 0.5em;
 
-        img {
+        svg {
             margin: 1em 0;
+
+			& path:hover,
+			& path:focus {
+				fill: $lime-green;
+			}
+	
         }
 	}
 
@@ -255,6 +293,11 @@ body {
 		font: 400 16px $public-sans;
 		color: $l-gray;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $lime-green;
+		}
 	}
 
 	&__grp {
@@ -323,16 +366,34 @@ body {
         display: block;
         
         &__listGroup {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(5, 5em);
+			align-items: center;
+			justify-items: center;
+			gap: 1em;
+	
         }
 
         &__listItem {
-            margin: 0 1em;
+			position: relative;
+            padding: 0 1em;
+
+			&:hover::before {
+				position: absolute;
+				width: 100%;
+				content: "";
+				z-index: -1;
+				top: 200%;
+				left: 0;
+				border-width: 3px;
+				border-style: solid;
+				border-image-slice: 1;
+				border-image-source: linear-gradient(to left, $lime-green, $bright-cyan);
+			}
         }
 
         &__link {
-            font-size: 14px;
+			font: 700 14px $public-sans;
             color: $grayish-blue;
         }
         
